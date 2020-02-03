@@ -1,32 +1,18 @@
 module.exports = {
-  extends: [
-    "plugin:vue-libs/recommended"
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended"
   ],
-  plugins: [
-    "node"
-  ],
-  env: {
-    "jest": true
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
   },
-  globals: {
-    name: 'off'
-  },
-  rules: {
-    "indent": ["error", 2, {
-      "MemberExpression": "off"
-    }],
-    "node/no-extraneous-require": ["error", {
-      "allowModules": [
-        "@vue/cli-test-utils"
-      ]
-    }]
-  },
-  overrides: [
-    {
-      files: ['**/__tests__/**/*.js', "**/cli-test-utils/**/*.js"],
-      rules: {
-        "node/no-extraneous-require": "off"
-      }
-    }
-  ]
-}
+  "rules": {
+    "no-prototype-builtins":["off"],
+    "no-useless-catch":["off"]
+  }
+};
