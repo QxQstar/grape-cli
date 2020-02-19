@@ -1,6 +1,6 @@
 {
   "name": "@hydesign/grape-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "脚手架工具",
   "bin": {
     "grape": "bin/cli.js"
