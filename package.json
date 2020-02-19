@@ -7,7 +7,8 @@
   },
   "scripts": {
     "lint": "eslint --fix preset/**/*.{js,vue} bin/*",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "pub": "npm publish --access public"
   },
   "devDependencies": {
     "@vue/cli": "^4.1.2",
