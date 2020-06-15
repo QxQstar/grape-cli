@@ -10,13 +10,11 @@ module.exports = (api) => {
       "validate-commit-msg": "^2.14.0",
       "fis3": "^3.4.41",
       "babel-plugin-component":"^1.1.1",
-      "lint-staged": "^8.1.5",
-      "vue-template-compiler": "2.6.10"
+      "lint-staged": "^8.1.5"
     },
     dependencies:{
       "lodash": "^4.17.15",
       "dmallmax-ui": "^2.10.0",
-      "vue": "2.6.10",
       "vue-router": "^3.1.3",
       "axios":"^0.19.2",
       "qs":"^6.9.1",
