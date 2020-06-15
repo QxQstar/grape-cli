@@ -20,19 +20,19 @@
         </li>
       </ul>
     </div>
-    <account />
+    <v-account />
   </div>
 </template>
 
 <script>
-  import menuHelper from '@/lib/menu.js'
   import { mapState } from 'vuex'
-  import account from './account'
+  import vAccount from './account'
+
   export default {
-    components:{ account },
+    components:{ vAccount },
     data() {
         return {
-          data:menuHelper.getTopMenu() || []
+          data:[]
         }
     },
     computed:{
