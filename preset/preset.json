@@ -4,7 +4,9 @@
   "plugins": {
     "@vue/cli-plugin-vuex": {},
     "@vue/cli-plugin-babel": {},
-    "@vue/cli-plugin-eslint": {}
+    "@vue/cli-plugin-eslint": {
+      "lintOn": ["save", "commit"]
+    }
   },
   "configs": {
     "vue": {
