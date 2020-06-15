@@ -11,7 +11,7 @@
           mode="vertical"
         >
           <sidebar-item
-            v-for="(route,index) in data"
+            v-for="(route,index) in menus"
             :key="index"
             :uniq-index="index + ''"
             :item="route"
@@ -24,18 +24,33 @@
 
 <script>
   import SidebarItem from './SidebarItem'
-  import menuHelper from "@/lib/menu";
 
   export default {
     components: { SidebarItem },
     data() {
       return {
-        data:menuHelper.getSlidMenu(),
         // 可选值 large,small,hidden
         sliderSize:'large'
       }
     },
     computed:{
+      menus(){
+        const result = []
+        // 获取左侧的菜单。只处理 root 路由配置下的 children
+        const getLeftMenus = (menus = []) => {
+          menus.forEach(menu => {
+            if(menu.meta && menu.meta.placement === 'left') {
+              result.push(menu)
+            }
+          })
+        }
+        this.$router.options.routes.forEach(item => {
+          if(!item.meta || !item.meta.fullPage) {
+            getLeftMenus(item.children)
+          }
+        })
+        return result
+      }
     }
   }
 </script>

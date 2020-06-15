@@ -1,7 +1,7 @@
 <template>
   <div class="menu-wrapper">
-    <template v-if="!item.list || item.list.length < 1">
-      <app-link :to="resolvePath(item.path,item.belong)">
+    <template v-if="!item.children || item.children.length < 1">
+      <app-link :to="resolvePath(item.path)">
         <dm-menu-item
           :class="{'submenu-title-noDropdown':!isNest}"
           :index="uniqIndex"
@@ -9,7 +9,7 @@
         >
           <item
             :icon="item.meta&&item.meta.icon"
-            :title="item.name"
+            :title="item.meta.menuName"
           />
         </dm-menu-item>
       </app-link>
@@ -25,11 +25,11 @@
       <template slot="title">
         <item
           :icon="item.meta && item.meta.icon"
-          :title="item.name"
+          :title="item.meta.menuName"
         />
       </template>
       <sidebar-item
-        v-for="(child,i) in item.list"
+        v-for="(child,i) in item.children"
         :key="i"
         :is-nest="true"
         :item="child"
@@ -67,8 +67,8 @@ export default {
     return {}
   },
   methods: {
-    resolvePath(routePath,belong) {
-      return resolvePath(routePath,belong)
+    resolvePath(routePath) {
+      return resolvePath(routePath)
     }
   }
 }

@@ -1,5 +1,6 @@
 import { fetchMenu } from "@/api"
 import { isExternal } from "./validate"
+import { routes } from "../router";
 
 let topMenu = '',
   slidMenu = ''
@@ -57,14 +58,13 @@ const menuObj = {
 /**
  * 解析跳转路径
  * @param path 路径
- * @param belong 路径所属的系统
  * @returns {*}
  */
-function resolvePath(path,belong) {
+function resolvePath(path) {
   if(!path) return ''
   if (isExternal(path)) return path
-  belong = ''
-  return  belong + path
+
+  return routes.getValidPath(path)
 }
 
 

@@ -7,6 +7,10 @@ export default [
   {
     name:'home',
     path:'/home',
+    meta:{
+      menuName:'首页',
+      placement:'left'
+    },
     component: () => import(/* webpackChunkName: "home" */ '@/views/home/main.vue')
   }
 ]
