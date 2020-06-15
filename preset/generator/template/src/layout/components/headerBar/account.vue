@@ -1,19 +1,19 @@
 <template>
   <div class="account-box elem_no-scale">
-    <el-dropdown @command="handleDropdown">
+    <dm-dropdown @command="handleDropdown">
       <span class="account-box__link link-text">
         {{ name || '未知用户' }}
         <i class="el-icon-arrow-down el-icon--right" />
       </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item command="modifyPw">
+      <dm-dropdown-menu slot="dropdown">
+        <dm-dropdown-item command="modifyPw">
           修改密码
-        </el-dropdown-item>
-        <el-dropdown-item command="logout">
+        </dm-dropdown-item>
+        <dm-dropdown-item command="logout">
           退出登录
-        </el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
+        </dm-dropdown-item>
+      </dm-dropdown-menu>
+    </dm-dropdown>
   </div>
 </template>
 

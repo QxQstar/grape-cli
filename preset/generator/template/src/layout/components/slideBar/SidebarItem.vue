@@ -2,7 +2,7 @@
   <div class="menu-wrapper">
     <template v-if="!item.list || item.list.length < 1">
       <app-link :to="resolvePath(item.path,item.belong)">
-        <el-menu-item
+        <dm-menu-item
           :class="{'submenu-title-noDropdown':!isNest}"
           :index="uniqIndex"
           :data-uniq-index="uniqIndex"
@@ -11,11 +11,11 @@
             :icon="item.meta&&item.meta.icon"
             :title="item.name"
           />
-        </el-menu-item>
+        </dm-menu-item>
       </app-link>
     </template>
 
-    <el-submenu
+    <dm-submenu
       v-else
       ref="subMenu"
       :index="uniqIndex"
@@ -36,7 +36,7 @@
         :uniq-index="uniqIndex + '-' + i"
         class="nest-menu"
       />
-    </el-submenu>
+    </dm-submenu>
   </div>
 </template>
 

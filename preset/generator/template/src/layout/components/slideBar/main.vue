@@ -4,8 +4,8 @@
     :class="['g-slider_'+sliderSize]"
   >
     <div class="g-slider-inner">
-      <el-scrollbar wrap-class="scrollbar-wrapper">
-        <el-menu
+      <dm-scrollbar wrap-class="scrollbar-wrapper">
+        <dm-menu
           :unique-opened="false"
           :collapse-transition="false"
           mode="vertical"
@@ -16,8 +16,8 @@
             :uniq-index="index + ''"
             :item="route"
           />
-        </el-menu>
-      </el-scrollbar>
+        </dm-menu>
+      </dm-scrollbar>
     </div>
   </div>
 </template>
