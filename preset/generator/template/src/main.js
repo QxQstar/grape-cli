@@ -2,10 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './components/element-ui/index.js'
+import dmallmaxUI from 'dmallmax-ui'
+import 'dmallmax-ui/dist/DMALLMAX.css';
 import './filters/common/index.js'
 import './styles/index.less'
 
+Vue.use(dmallmaxUI)
 Vue.config.productionTip = false
 
 new Vue({

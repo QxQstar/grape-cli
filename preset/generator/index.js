@@ -10,23 +10,23 @@ module.exports = (api) => {
       "validate-commit-msg": "^2.14.0",
       "fis3": "^3.4.41",
       "babel-plugin-component":"^1.1.1",
-      "lint-staged": "^8.1.5"
+      "lint-staged": "^8.1.5",
+      "vue-template-compiler": "2.6.10"
     },
     dependencies:{
       "lodash": "^4.17.15",
-      "element-ui": "^2.13.0",
-      "element-theme": "^2.0.1",
-      "element-theme-chalk": "^2.13.0",
+      "dmallmax-ui": "^2.10.0",
+      "vue": "2.6.10",
       "vue-router": "^3.1.3",
       "axios":"^0.19.2",
       "qs":"^6.9.1",
       "clipboard": "2.0.4",
     },
     config: {
-        "ghooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "validate-commit-msg"
-        }
+      "ghooks": {
+        "pre-commit": "lint-staged",
+        "commit-msg": "validate-commit-msg"
+      }
     },
     "lint-staged": {
       "src/**/*.{js,vue}": [
