@@ -2,10 +2,9 @@
   <div class="g-header elem_no-scale">
     <div class="header-main elem_1x">
       <div class="logo elem_no-scale">
-        <img
-          class="logo__img"
-          src="../../../assets/images/h_dmall.png"
-        >
+        <div class="logo__img">
+          {{ projectName }}
+        </div>
       </div>
       <!-- nav -->
       <ul class="nav-box elem_1x">
@@ -32,7 +31,8 @@
     components:{ vAccount },
     data() {
         return {
-          data:[]
+          data:[],
+          projectName:process.env.VUE_APP_PROJECT_NAME
         }
     },
     computed:{
