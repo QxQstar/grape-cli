@@ -9,7 +9,9 @@ export default [
     path:'/home',
     meta:{
       menuName:'首页',
-      placement:'left'
+      placement:'left',
+      // 顺序
+      sort:1
     },
     component: () => import(/* webpackChunkName: "home" */ '@/views/home/main.vue')
   }

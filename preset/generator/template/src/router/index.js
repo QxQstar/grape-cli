@@ -36,12 +36,17 @@ const routes = {
     }
     return route
   },
-  // 确保通配符路由放在最后
+  //  对路由配置进行配置，并且确保通配符路由放在最后
   sortRoute(fullRoutes){
     return fullRoutes.sort((a,b) => {
       if(a.path === '*') return 1
       else if(b.path === '*') return -1
-      else return 0
+      else {
+        const aSort = (a.meta||{}).sort || 0,
+          bSort = (b.meta||{}).sort || 0
+
+        return aSort - bSort
+      }
     });
   }
 }
@@ -68,7 +73,7 @@ const createRouter = () => new Router({
     {
       path:'/',
       component:Layout,
-      children:routes.layoutRoutes.map( routes.formatRoute )
+      children:routes.sortRoute(routes.layoutRoutes.map( routes.formatRoute ))
     },
     // 无顶部导航和左侧导航的页面
     ...routes.sortRoute( routes.fullRoutes.map( routes.formatRoute ) )
