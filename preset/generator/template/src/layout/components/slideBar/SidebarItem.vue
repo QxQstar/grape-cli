@@ -12,7 +12,7 @@
         >
           <item
             :icon="item.meta&&item.meta.icon"
-            :title="item.meta.menuName"
+            :title="item.meta.menuName || '未知菜单'"
           />
         </dm-menu-item>
       </app-link>
@@ -28,7 +28,7 @@
       <template slot="title">
         <item
           :icon="item.meta && item.meta.icon"
-          :title="item.meta.menuName"
+          :title="item.meta.menuName || '未知菜单'"
         />
       </template>
       <sidebar-item
