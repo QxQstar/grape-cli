@@ -1,7 +1,10 @@
 <template>
   <div class="menu-wrapper">
-    <template v-if="!item.children || item.children.length < 1">
-      <app-link :to="resolvePath(item.path)">
+    <template v-if="!item.children || item.children.length < 1 || noShowingChildren(item.children)">
+      <app-link
+        :to="resolvePath(basePath,item.path)"
+        class="menu-link"
+      >
         <dm-menu-item
           :class="{'submenu-title-noDropdown':!isNest}"
           :index="uniqIndex"
@@ -34,6 +37,7 @@
         :is-nest="true"
         :item="child"
         :uniq-index="uniqIndex + '-' + i"
+        :base-path="resolvePath(basePath,item.path)"
         class="nest-menu"
       />
     </dm-submenu>
@@ -61,15 +65,31 @@ export default {
     uniqIndex:{
       type:String,
       default:'0'
+    },
+    basePath: {
+      type: String,
+      default: '/'
     }
   },
   data() {
     return {}
   },
   methods: {
-    resolvePath(routePath) {
-      return resolvePath(routePath)
+    resolvePath(basePath,routePath) {
+      return resolvePath(basePath,routePath)
+    },
+    noShowingChildren(children){
+      return children.every(route => {
+        const meta = route.meta || {}
+
+        return !!meta.hidden
+      })
     }
   }
 }
 </script>
+<style lang="less" scoped>
+  .menu-link{
+    text-decoration: none;
+  }
+</style>
