@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import { parseTime, formatTime } from '@/lib/tools'
+import { getValidPath } from "../../lib/menu";
 
 /** 计算传入的时间距离现在的时间多久
  * @param {number} time 毫秒数 || 秒数
@@ -103,3 +104,4 @@ Vue.filter('toThousandFilter',toThousandFilter)
 Vue.filter('numberFormatter',numberFormatter)
 Vue.filter('timeAgo',timeAgo)
 Vue.filter('changeMoney',changeMoney)
+Vue.filter('getValidPath',getValidPath)

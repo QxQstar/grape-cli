@@ -15,7 +15,11 @@ function resolvePath(basicPath,path) {
   return  routes.getValidPath(basicPath+'/'+path)
 }
 
+function getValidPath(path) {
+  return routes.getValidPath(path)
+}
 
 export {
-  resolvePath
+  resolvePath,
+  getValidPath
 }
